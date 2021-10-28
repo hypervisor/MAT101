@@ -1,0 +1,104 @@
+Relasjon
+En binær relasjon *fra* mengden S til mengden T er en delmengde av S × T. En binær relasjon *på* mengden S er en delmengde av S².
+Mer generelt, en n-ær relasjon (n-ary relation) er en delmengde av A(1) × ... × A(n), og en n-ær relasjon på en mengde A er en delmengde av A^n.
+
+Når vi bruker ordet "relasjon", er det som oftest underforstått at det betyr en binær relasjon.
+
+Binær relasjon
+Mengden {<a,1>,<a,2>,<b,2>} er en binær relasjon *fra* {a,b} *til* {1,2} fordi den er en delmengde av {a,b} × {1,2}:
+        1   2
+    a   1   1
+    b   0   1
+
+Følgende er en binær relasjon *på* mengden {1,2,3}:
+{<1,2, <1,3>,<2,3>,<3,3>}
+        1   2   3
+    1   0   1   1
+    2   0   0   1
+    3   0   0   1
+
+Vi har alltid følgende spesielle relasjoner når to mengder S og T er gitt:
+    Identitetsrelasjonen (identity relation) på S, som relaterer alle elementene til seg selv: {<x,x> | x ∈ S}. Ta mengden {1,2,3} for eksempel:
+            1   2   3
+        1   1   0   0
+        2   0   1   0
+        3   0   0   1
+
+    Den tomme relasjonen (empty relation) fra S til T, som ikke relaterer noen elementer til hverandre: Ø. Ta mengden {1,2,3} for eksempel:
+        1   2   3
+    1   0   0   0
+    2   0   0   0
+    3   0   0   0
+
+Vi kjenner allerede mange binære relasjoner: likhetsrelasjonen =, delmengderelasjonen ⊆, mindre enn eller lik-relasjonen <=,
+mindre enn-relasjonen < og logisk konsekvens-relasjonen ⇒. Vi har også relasjoner på andre typer objekter, for eksempel har vi forelder-relasjonen,
+søskenrelasjonen, kjæresterelasjonen og vennerelasjonen, som alle er relasjoner på mengden av mennesker.
+
+Notasjon: Hvis R er en relasjon og <a, b> ∈ R, tillater vi oss å skrive aRb i stedet for <a,b> ∈ R. Vi skriver for eksempel 4 < 5 i stedet for <4,5> ∈ <.
+Dette kalles infiksnotasjon (infix notation).
+
+En mengde med to elementer har nøyaktig 16 forskjellige relasjoner mellom elementene. Tegn 2 sirkler, også se hvor mange piler du klarer å lage.
+
+Refleksiv relasjon
+En binær relasjon R på mengden S er refleksiv (reflexive) hvis det for alle x i S er slik at <x, x> ∈ R.
+
+Eksempel: La S være mengden {1,2,3}. Da er {<1,1>,<2,2>,<3,3>} en refleksiv relasjon på S fordi alle tuplene på formen <x,x> er med.
+Det samme er tilfellet med relasjonen {<1,1>,<1,2>,<2,2><2,3>,<3,3>}. Men {<1,1>, <1,3>} er *ikke* en refleksiv relasjon på S, fordi både <2,2> og <3,3> mangler.
+Relasjonen {<1,1>,<2,2>} er heller ikke det, denne gangen fordi <3,3> mangler.
+
+M={1,2,3}
+R={<1,1>,<1,2>,<2,2>,<3,3>} Refleksiv!
+R={<1,1>,<1,2>,<2,2>,<3,3>, <3, 4>} Ikke refleksiv! Hver x i <x, x> i R MÅ være i M! 4 er ikke i M, og dermed er ikke R refleksiv her.
+
+Likhetsrelasjonen: alltid refleksiv
+Delmengderelasjonen: refleksiv
+Minde enn eller lik-relasjonen: refleksiv
+Logisk konsekvens-relasjonen på formler: refleksiv
+Universelle relasjonen på en mengde: refleksiv
+
+Symmetrisk relasjon
+En binær relasjon R på mengden S er symmetrisk hvis det for alle x,y er slik at hvis <x,y> ∈ R, så <y,x> ∈ R.
+Eksempel:
+    S={1,2,3}
+    R={<1,2>,<2,1>,<1,3>,<3,1>,<2,3>,<3,2>}
+
+Likhetsrelasjonen: alltid symmetrisk
+Delmengderelasjonen: *ikke* symmetrisk
+Minde enn eller lik-relasjonen: *ikke* symmetrisk
+Logisk konsekvens-relasjonen på formler: ikke *symmetrisk*
+Logisk ekvivalens-relasjonen på formler: symmetrisk
+Universelle relasjonen på en mengde: symmetrisk
+
+Transitiv relasjon
+En binær relasjon R på mengden S er transitiv (transitive) hvis det for alle x,y,z er slik at hvis <x,y> ∈ R og <y, z> ∈ R, så <x, z> ∈ R.
+Transitive relasjoner er de hvor alt du kan gjøre i to steg, kan du også gjøre i ett steg.
+La S være mengden {1,2,3}. Da er relasjonen {<1,2>,<2,3>,<1,3>} en transitiv relasjon på S. Relasjonen {<1,2>,<2,3>} er *ikke* en transitiv relasjon,
+fordi <1,3> mangler (<x,z>).
+
+Likhetsrelasjonen: alltid transitiv
+Delmengderelasjonen: transitiv
+Minde enn eller lik-relasjonen: transitiv
+Logisk konsekvens-relasjonen på formler: transitiv
+Logisk ekvivalens-relasjonen på formler: transitiv
+Universelle relasjonen på en mengde: transitiv
+
+Ekvivalensrelasjon
+En binær relasjon på mengden S er en ekvivalensrelasjon (equivalence relation) hvis den er refleksiv, symmetrisk og transitiv.
+La S være mengden {1,2,3}. Da er relasjonen {<1,1>,<2,1>,<1,2>,<2,2>,<3,3>} en ekvivalensrelasjon på S fordi den refleksiv, symmetrisk og transitiv.
+Men relasjonen {<1,1>,<2,1>,<1,2>} er ikke en ekvivalensrelasjon på S, fordi den hverken er refleksiv eller transitiv.
+
+Anti-symmetri og irrefleksivitet
+Ekvivalensrelasjoner oppfører seg pent, men bildet er ikke fullstendig før vi ser på anti-symmetri og irrefleksivitet. Disse egenskapene er *ikke*
+nøyaktig de motsatte av symmetri og refleksivitet, men nesten.
+
+Anti-symmetrisk relasjon
+En binær relasjon R på mengden S er anti-symmetrisk (anti-symmetric) hvis det for alle x,y er slik at hvis <x,y> ∈ R og <y, x> ∈ R, så x = y.
+Anti-symmetriske relasjoner er de hvor det ikke finnes to forskjellige elementer som er relatert til hverandre. De eneste relasjonene på en mengde med to
+elementer som *ikke* er anti-symmetriske er de hvor to elementer er relatert til hverandre.
+
+La S være mengden {1,2,3}. Relasjonen {<1,2>, <1,3>} er anti-symmetrisk, men {<1,2>, <2,1>} er ikke anti-symmetrisk, fordi <1,2> og <2,1> er med, men 1 != 2.
+
+Irrefleksiv relasjon
+En binær relasjon R på mengden S er irrefleksiv (irreflexible) hvis det ikke er noen x ∈ S slik at <x,x> ∈ R.
+Irrefleksive relasjoner er de hvor ingenting er relatert til seg selv.
+

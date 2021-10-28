@@ -1,0 +1,152 @@
+﻿Logiske konnektiver:
+
+∨ OR/ELLER (en av P, Q er sann)
+∧ AND/OG (P og Q er begge sann)
+¬ NOT (Motsatt, flipper uttrykket, altså hvis P er sann så er ¬P usann og hvis P er usann så er ¬P sann, ¬¬P = P)
+	Ekvivalent med:
+		(P → F) der F er absolutt usann (altså, et utrykk som alltid er usann, for eksempel P ∧ ¬P)
+→ Implication/Impliserer (Hvis P er sann, er Q sann)
+	Ekvivalent med:
+		(¬P ∨ Q)
+⊕ XOR (eXclusive OR, P ELLER Q er sann, men ikke begge)
+	Ekvivalent med:
+		(P ∨ Q) ∧ ¬(P ∧ Q)
+↓ NOR (P og Q er begge usann)
+	Ekvivalent med:
+		(¬P ∧ ¬Q)
+| NAND (P og Q er ikke begge sann)
+	Ekvivalent med:
+		¬(P ∧ Q)
+
+Logisk konsekvens:
+La M være en mengde av utsagnslogiske formler og F en annen utsagnslogisk formel.
+F er en logisk konsekvens av formlene i M hvis F er sann for alle valuasjoner som gjør hver formel i M sann.
+Altså, for hver formel i M har vi visse parametre som skal til for at formelen blir sann. Hvis F er sann med de samme parametrene, for alle formlene (og dermed alle parametrene)
+i M, er F en logisk konsekvens av M. For at F ikke skal være en logisk konsekvens av M, må det finnes en valuasjon i M som gjør F usann.
+Symbolet for logisk konsekvens er ⊨, eks. M ⊨ F.
+
+{ P, (P → Q) } ⊨ Q, bevis:
+
+P Q P (P → Q) Q
+1 1 1    1    1
+1 0 1    0    0
+0 1 0    1    1
+0 0 0    1    0
+
+Her ser vi at alle valuasjoner som gjør både P og (P → Q) sanne, gjør også Q sanne.
+Når P=1 og Q=1 er P og (P → Q) sann, da er Q også sann.
+
+Er (P → (Q ∨ R)) en logisk konsekvens av (P → Q)?
+
+P	Q	R	(P → Q)	(P → (Q ∨ R))
+1	1	1	 1 1 1	 1 1  1 1 1
+1	1	0	 1 1 1	 1 1  1 1 0
+1	0	1	 1 0 0	 1 1  0 1 1
+1	0	0	 1 0 0	 1 0  0 0 0
+0	1	1	 0 1 1	 0 1  1 1 1
+0	1	0	 0 1 1	 0 1  1 1 0
+0	0	1	 0 1 0	 0 1  0 1 1
+0	0	0	 0 1 0	 0 1  0 0 0
+
+Her ser vi at alle valuasjoner som gjør (P → Q) sann, gjør også (P → (Q ∨ R)) sann, dermed kan vi si at
+(P → Q) ⊨ (P → (Q ∨ R))
+
+Merk: Det finnes valuasjoner der (P → (Q ∨ R)) er sann når (P → Q) er usann. Det går fint, siden spørsmålet i logisk konsekvens
+er om *alle valuasjoner som gjør A sann, også gjør B sann*. Dette er det som skiller logisk konsekvens fra logisk ekvivalens.
+I logisk ekvivalens skal begge uttrykkene være lik uansett hvilke parametre gitt.
+I logisk konsekvens kan det finnes valuasjoner (sett med parametre) der A != B.
+
+Logisk konsekvens er omtrent det samme som implikasjon. Forskjellen er at implikasjon er et logisk konnektiv; logisk konsekvens er et forhold mellom formler.
+
+Et resonnement eller argument er *gyldig* (valid) eller *holdbart* (sound) hvis konklusjonen er en logisk konsekvens av mengden av premisser.
+
+Hvis solen skinner, så er jeg glad.		(S → G)
+Solen skinner.							S
+-----------------------------------------------
+Jeg er glad.							G
+
+
+
+Hvis (S → G) og S er sann, må også G være sann. G er en logisk konsekvens av mengden { (S → G), S }. Det vil si at dette er et gyldig/holdbart argument.
+
+Hvis solen skinner, så er jeg glad.		(S → G)
+Jeg er ikke glad.						¬G
+-----------------------------------------------
+Solen skinner ikke.						¬S
+
+Dette er også et gyldig argument, og vi kan observere at siden G er usann (¬G gitt), da får vi (S → 0), og for at uttrykket skal være sant, må S være usant.
+
+
+
+Hvis solen skinner, så er jeg glad.		(S → G)
+Solen skinner ikke.						¬S
+-----------------------------------------------
+Jeg er ikke glad.						¬G
+
+Dette er et ugyldig argument. Vi spør egentlig om ¬G er en logisk konsekvens av mengden { (S → G), ¬S }
+S	G	(S → G)	¬S	¬G
+1	1	1		0	0
+1	0	0		0	1
+0	1	1		1	0	<---- Valuasjon gjør alle formler i mengden sann (0)
+0	0	1		1	1	<---- Valuasjon gjør alle formler i mengden sann (1)
+
+Som vi kan se, så har vi to valuasjon som tilfredstiller mengden, men det finnes en valuasjon der ¬G ikke er sann, nemlig valuasjon 0 (S=0, G=1).
+Dette betyr at hvis solen ikke skinner, og personen er glad, så tilfredstiller dette ikke ¬G (siden ¬G når personen er glad er ¬1, altså 0). Da er ¬G ikke en logisk konsekvens
+av mengden.
+
+Oppfyllbarhet
+Hvis en valuasjon v gjør en utsagnslogisk formel F sann, sier vi at valuasjonen oppfyller (satisfies) formelen, og vi skriver v ⊨ F.
+En utsagnslogisk formel er oppfyllbar (satisfiable) hvis det finnes en valuasjon som oppfyller den.
+Enklere sagt: oppfyllbar betyr at det går an å gjøre et uttrykk sant.
+
+Formelen (P → Q) er oppfyllbar; det finnes en valuasjon som gjør uttrykket sant (det finnes flere, men vi trenger kun en).
+Formelen (P ∧ ¬P) er ikke oppfyllbar; P kan ikke være både sann OG usann samtidig.
+
+Falsifiserbarhet
+Hvis en valuasjon v gjør en utsagnslogisk formel F usann, sier vi at valuasjonen falsifiserer (falsifies) formelen, og vi skriver v ⊭ F.
+En utsagnslogisk formel er falsifiserbar (falsifiable) hvis det finnes en Valuasjon som falsifiserer den.
+Enklere sagt: falsifiserbar betyr at det går an å gjøre et uttrykk usant, motsatt av oppfyllbarhet.
+
+Formelen (P → Q) er falsifiserbar; det finnes en valuasjon som gjør uttrykket usant.
+Formelen (P ∨ ¬P) er ikke falsifiserbar; det finnes ingen valuasjon som gjør uttrykket usant.
+
+Tautologi
+Hvis en utsagnslogisk formel F er sann for *alle* valuasjoner, er formelen en tautologi (og dermed også gyldig), og vi skriver ⊨ F.
+(P ∨ ¬P) er en tautologi fordi den vil alltid være sann.
+(P → P) er f.eks også en tautologi.
+
+Motsigelse/kontradiksjon
+Hvis en utsagnslogisk formel F er usann for *alle* valuasjoner, er formelen kontradiktorisk (contradictory), eller en kontradiksjon (contradiction) eller en motsigelse.
+(P ∧ ¬P) er en motsigelse/kontradiksjon.
+
+⊤ betyr topp, altså sant.
+⊥ betyr bunn, altså usant.
+
+F ⟷ G hvis og bare hvis ⊨ F ⟷ G.
+{F} ⊨ G hvis og bare hvis ⊨ F → G
+
+To formler er logisk ekvivalente hviss de er logiske konsekvenser av hverandre.
+F ⟷ G hvis og bare hvis F ⇒ G og G ⇒ F (der ⇒ betyr at høyresiden er en logisk konsekvens av venstresiden)
+
+Uavhengig formel og mengde
+En formel F er uavhengig (independent) av en menge formler M hvis hverken F eller ¬F er en logisk konsekvens av M.
+En mengde formler er uavhengige hvis enhver formel er uavhengig av mengden av de andre formlene.
+Eksempel: formelen P er uavhengig av mengden { P ∨ Q, R } fordi hverken P eller ¬P er en logisk konsekvens av den.
+Formelen P er ikke uavhengig av mengden { P ∧ Q, R } fordi P er en logisk konsekvens av den.
+
+Er (P ∨ Q) en logisk konsekvens av (P ∧ Q)?
+P	Q	(P ∧ Q) (P ∨ Q)	
+1	1	1		1		
+1	0	0		1		
+0	1	0		1		
+0	0	0		0		
+
+Svar: (P ∧ Q) ⊨ (P ∨ Q), fordi det finnes ingen valuasjon der (P ∨ Q) er usann når (P ∧ Q) er sann.
+Om formlene hadde vært byttet hadde svaret vært motsatt.
+
+--------------------------------------------------------------------------
+|						|	F er sann		|	F er usann				 |
+|-----------------------|-------------------|----------------------------|
+| For alle valuasjoner	|	F er gyldig		|	F er kontradiktorisk	 |
+| For minst en valuasjon|	F er oppfyllbar	|	F er falsifiserbar		 |
+--------------------------------------------------------------------------

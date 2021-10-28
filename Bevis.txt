@@ -1,0 +1,109 @@
+Bevis
+Et bevis for en påstand fra en mengde gitte antakelser er en rekke logiske slutninger som viser hvordan vi kommer fra antakelsene
+til påstanden. For hvert steg må konklusjonen være en logisk konsekvens av antakelsene.
+
+Formodninger
+En formodning (conjecture) er en påstand som vi tror, eller har god grunn til å tro er sann, men som vi ikke har bevist eller motbevist.
+Goldbachs formodning: Ethvert partall større enn to kan uttrykkes som summen av to primtall (f.eks 14 = 3 + 11, 18 = 5 + 13, osv)
+
+Hvis vi antar at ((P → Q) ∧ P) er sann, da kan vi se at P må være sann (siden venstresiden og høyresiden av ∧ må begge være sann),
+og vi kan se at (P → Q) må være sann, og siden vi vet at P må være sann, da må Q også være sann fordi 1 → Q vil kun være sant når Q er 1.
+Altså, med antakelsen at ((P → Q) ∧ P) er sann, har vi at (P ∧ Q) er også sann. *(P ∧ Q) er en logisk konsekvens av ((P → Q) ∧ P)*.
+((P → Q) ∧ P) ⊨ (P ∧ Q).
+
+Direkte bevis
+Et direkte bevis (direct proof) for en påstand på formen "hvis F, så G" er et logisk gyldig resonnement som begynner med antakelsen
+om at F er sann og som ender med konklusjonen om at G er sann.
+
+Et direkte bevis begynner typisk med "anta at F er sann" og slutter med "det følger derfor at G er sann".
+Eksempel: Anta at valuasjonen gjør (P ∧ Q) sann. Da må valuasjonen gjøre både P og Q sanne, og derfor er P sann.
+
+Eksistensbevis
+En eksistenspåstand (existential statement) er en påstand som sier at noe eksisterer. Hvordan beviser vi eksistenspåstander?
+Vi beviser eksisstenspåstander ved å helt enkelt finne objektet som gjør påstanden sann. Slike bevis kalles eksistensbevis (existential proof).
+Eksempel: Bevis påstanden "Det finnes et naturlig tall slik at x * 2 = 8" La x være tallet 4. Da er 4 * 2 = 8.
+
+Bevis ved tilfeller
+En annen, vanlig bevismetode er bevis ved tilfeller (proof by cases) eller bevis ved uttømmelse (proof by exhaustion).
+Her deles et bevis opp i mindre deler, som tilsammen dekker det vi skal bevise, og hver enkelt del blir bevist hver for seg.
+Eksempel:
+    La A = { 1, 2 } og la B = { 1, 2, 3, 4 }. Vis at A ⊆ B.
+    La x være et element i A. Vi må fra denne antakelsen vise at x er et element i B. Enten vil x = 1 eller x = 2. I begge tilfeller er x et element i B.
+    Vi kan konkludere med at x er et element i B, og dermed med at A ⊆ B.
+
+Tilfeldig vs vilkårlig:
+Vilkårlig vil alltid være en variabel. Om vi snakker om tall fra 0 til 100, så er 7 et tilfeldig tall, og x et vilkårlig tall.
+
+Bevis for universelle påstander
+Universelle påstander er påstander som sier noe om alle objekter av en bestemt type. For eksempel "alle partall er delelige med 2" eller
+"enhver valuasjon som gjør P sann, må gjøre (P ∨ Q) sann". Hvordan beviser vi universelle påstander?
+En vanlig måte er ved å velge et vilkårlig (arbitrary) objekt og vise at *dette objektet* har den ønskede egenskapen. Ordet "vilkårlig" betyr at det
+ikke ligger noen føringer på hvilket objekt vi velger; det kunne vært hvilket som helst objekt. Med andre ord skal vi ikke anta noe som helst om objektet.
+Hvis vi skal være presise, sier vi gjerne til slutt "fordi objektet var vilkårlig valgt, holder påstanden for alle objekter".
+
+Eksempel: Bevis påstanden "alle partall er delelige med 2".
+    Dette er en universell påstand, fordi den sier noe om alle partall. La x stå for et vilkårlig partall. Per definisjon må x være på formen 2y, hvor y
+    er et heltall. Da kan tallet deles på 2. *Fordi x var vilkårlig valgt, følger det at alle partall kan deles på 2*.
+
+Eksempel: Bevis påstanden "enhver valuasjon som gjør P sann, gjør også (P ∨ Q) sann".
+    Dette er en universell påstand fordi den sier noe om *alle* valuasjoner. Velg en vilkårlig valuasjon, og anta at denne gjør P sann.
+    Ved definisjonen av sannhetsverditabellen for ∨-formler, må den gjøre (P ∨ Q) sann. Fordi valuasjonen var vilkårlig valgt, følger det at enhver
+    valuasjon som gjør P sann, må gjøre (P ∨ Q) sann.
+
+Eksempel: Vis at Q er en logisk konsekvens av (¬P ∧ ¬¬Q).
+    Først kan vi prøve å anta at alle valuasjoner gjør (¬P ∧ ¬¬Q) sann. Det er ulurt, siden det går ikke an.
+    Så prøver vi å anta at ¬¬Q er sann. Det er heller ikke så lurt. Det gir riktignok at Q er sann, men det betyr kun at Q
+    er en logisk konsekvens av ¬¬Q, ikke av (¬P ∧ ¬¬Q), som er det oppgaven spør etter.
+    Løsningen er å anta at (¬P ∧ ¬¬Q) er sann. Fra denne antakelsen følger det at ¬¬Q er sann, og dermed at Q er sann.
+    Det viser at Q er en logisk konsekvens av (¬P ∧ ¬¬Q).
+
+Moteksempler
+Hvis en påstand ikke er sann, er det umulig å bevise den. Hvis påstanden er universell, er det i prinsippet mulig å finne et moteksempel (counter example)
+til den. Et moteksempel er en form for eksistensbevis; det er et bevis for at *det finnes et tilfelle* som gjør den usann.
+
+Kontrapositive bevis (contrapositive proof)
+Noen ganger er det vanskelig å gjennomføre et direkte bevis for en påstand på formen "hvis F, så G". Da går det an å begynne med antakelsen
+om at G er usann og ende med konklusjonen om at F er usann. Da må den opprinnelige påstanden holde, og dette kalles å bevise påstanden kontrapositivt.
+Den kontrapositive av formelen (F → G) er formelen (¬G → ¬F).
+En →-formel og den kontrapositive formelen er alltid ekvivalente med hverandre. Legg oså merke til at et kontrapositivt bevis for (F → G) er et direkte bevis
+for den kontrapositive, (¬G → ¬F).
+
+Det er god praksis å si at vi har bevist noe kontrapositivt, hvis det er det vi gjør. Noen ganger er det enmklere å bevise påstander kontrapositivt, men
+et direkte bevis er som oftest å foretrekke. Et direkte bevis kan være mye enklere å lese, forstå og formidle videre.
+
+Bevis påstanden "hvis 3n + 2 er et oddetall, så er n et oddetall".
+Vi beviser den kontrapositive påstanden, som er ekvivalent: "hvis n ikke er et oddetall, så er ikke 3n + 2 et oddetall".
+Herfra er strukturen på beviset identisk med et direkte bevis. Anta at n ikke er et oddetall, altså at n er et partall. Da er n på formen 2x for et heltall x.
+Da er 3n + 2 lik 3(2x) + 2 som er lik 6x + 2. Siden dette tallet er lik 2(3x + 1), er det et partall. Da er ikke 3n + 2 et oddetall.
+Dermed har vi vist den opprinnelige påstanden.
+
+Motsigelsesbevis
+Et motsigelsesbevis (proof by contradiction) for en påstand er et bevis som begynner med antakelsen om at påstanden er usann og som viser hvordan denne antakelsen
+fører til en motsigelse. Beviset konkluderer med at påstanden må være sann.
+
+Bevis at formelen (P → Q) ∨ (Q → P) er sann for alle valuasjoner.
+Anta for motsigelse at påstanden ikke holder. Da må det finnes en valuasjon som gjør formelen usann. Den eneste måten å gjøre en disjunksjon usann på, er ved å
+gjøre begge disjunktene usanne. Da må denne valuasjonen gjøre både (P → Q) og (Q → P) usanne. Siden valuasjonen gjør (P → Q) usann, må den gjøre P sann og Q usann.
+Men hvis P er sann og Q er usann, så (Q → P) lik (0 → 1) som er sant, altså - vi har en motsigelse. Vi kan konkludere med at (P → Q) ∨ (Q → P) er sann for alle valuasjoner.
+
+I motsigelsesbevis viser vi at noe er sant ved å vise at det ikke er mulig at det er usant. Dette forutsetter at det er sant hvis og bare hvis det ikke er usant -
+altså at det er bare to mulige utfall, sant og usant, som er tilfellet i utsagnslogikk.
+Motsigelsesbevis er ikke *konstruktive* i samme forstand som eksistensbevis og direkte bevis.
+
+Konstruktive versus ikke-konstruktive bevis
+Et motsigelsesbevis er et eksempel på et ikke-konstruktivt bevis. et motsigelsesbevis for en påstand om at noe finnes trenger ikke vise frem objektet som gjør påstanden sann.
+Det er det som gjør det til et ikke-konstruktivt bevis (non-constructive proof). Hvis beviset viser frem eller gir en metode for å finne objektet, er det konstruktivt.
+
+Bevis for at noe ikke er sant
+Hvis vi vil bevise at en påstand *ikke* er sann, kan vi begynne med å anta at påstanden er sann, og vise hvordan det leder til en motsigelse.
+Dette virker veldig likt motsigelsesbevis, men det er *ikke* det samme. Denne typen bevis er et direkte bevis for at noe er usant.
+Et motsigelsesbevis for at en påstand P er sann, er et bevis for at ¬P leder til en motsigelse. Et bevis for at en påstand P ikke er sann, er et bevis for at antakelsen
+om at P er sann leder til en motsigelse.
+
+Altså, hvis vi antar at P er usann og finner ut at det er usant, da har vi et *indirekte* bevis på at P er sann.
+Hvis vi antar at P er sann og finner ut at det er usant, da har vi et *direkte* bevis på at P er usann.
+
+Eksempel: Vis at formlene P og (P → ¬P) ikke kan være sanne samtidig.
+Anta at P og (P → ¬P) er sanne samtidig. Da finnes det en valuasjon som gjør P sann og (P → ¬P) sann. Ved tolkningen av →-formler, må valuasjonen også gjøre ¬P sann.
+Ved tolkningen av ¬-formler følger det at P er usann. Men det er umulig, fordi vi har antatt at valuasjonen gjør P sann.
+Vi kan konkludere med at formlene ikke kan være sanne samtidig.
