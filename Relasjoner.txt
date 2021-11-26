@@ -97,6 +97,7 @@ Anti-symmetriske relasjoner er de hvor det ikke finnes to forskjellige elementer
 elementer som *ikke* er anti-symmetriske er de hvor to elementer er relatert til hverandre.
 
 La S være mengden {1,2,3}. Relasjonen {<1,2>, <1,3>} er anti-symmetrisk, men {<1,2>, <2,1>} er ikke anti-symmetrisk, fordi <1,2> og <2,1> er med, men 1 != 2.
+Lettere forklart: La S være mengden {a,b,c}. A kan gå til B, men da kan ikke B gå til A. Elementer kan kun gå i en retning.
 
 Irrefleksiv relasjon
 En binær relasjon R på mengden S er irrefleksiv (irreflexible) hvis det ikke er noen x ∈ S slik at <x,x> ∈ R.

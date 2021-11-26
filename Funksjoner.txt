@@ -1,0 +1,69 @@
+Funksjoner tar inn noe og gir ut noe. Om du gir x to ganger til samme funksjon vil du alltid få samme resultat.
+Definisjon:
+En funksjon fra A til B er en binær relasjon f fra A til B slik at for envher x ∈ A, er det *nøyaktig* ett element y ∈ B slik at
+<x,y> ∈ f. Vi skriver f(x) = y når <x,y> ∈ f. I dette tilfellet kaller vi x for argumentet, og f(x) for verdien til funksjonen.
+Vi skriver f : A → B for funksjonen f når den er en funksjon fra A til B.
+
+Relasjonen {<1,1>,<2,2>,<3,3>} er en funksjon fra {1,2,3} til {1,2,3}. Det vil si at f(1) = 1, f(2) = 2, f(3) = 3.
+
+Relasjonen {<1,b>,<2,a>} fra {1,2,3} til {a,b} er ikke en funksjon fordi den mangler et tuppel på formen <3,x>, altså, f(3) finnes ikke
+siden {a,b} bare har to elementer.
+
+Relasjonen {<1,1>,<1,2>} på {1,2} er heller ikke en funksjon fordi 1 forekommer i første elementet i begge tuplene, og det går ikke.
+Hvorfor går ikke det? Fordi i <x,y> gir f(x)=y, og som sagt ovenfor vil en funksjon alltid returnere det samme med samme input. Altså,
+om du gir f(x) to ganger, vil du få det samme. I relasjonen {<1,1>,<1,2>} er den første tuppelen <1,1>, som vil si at f(1) = 1. Men så ser vi
+i andre tuppelen <1,2> som vil si at f(1) = 2, som motsier seg selv. Da kan ikke dette være en funksjon.
+
+Definisjons- og verdiområde
+La f være en funksjon fra A til B. Mengden A kalles definisjonsområdet (domain) til f, og mengden B kalles verdiområdet (codomain) til f.
+
+En funksjon må da ha to essensielle egenskaper (i tillegg til å være en binær relasjon):
+    - Funksjonen kan ikke sende et element i definisjonsområdet til to (eller mer) forskjellige elementer i verdiområdet.
+    - Funksjonen må sende *ethvert element* i definisjonsområdet til et element i verdiområdet.
+Hvis en relasjon har disse egenskapene, er den en funksjon.
+
+Etterfølgerfunksjonen (successor function)
+s : N → N er slik at f(x) = x + 1.
+
+Identitetsfunksjonen
+Hvis a er en mengde, er identitetsfunksjonen (identity function) på A funksjonen f slik at f(x) = x for alle x ∈ A.
+
+En funksjon for partall og oddetall:
+Funksjonen Par : N -> {0,1} definert ved
+          |
+Par(x) = |  1 hvis x er et partall
+         |  0 hvis x er et oddetall
+          |
+har N som sitt definisjonsområde og {0,1} som sitt verdiområde, og kan brukes til å identifisere partall og oddetall.
+Par(2) = 1
+Par(4) = 1
+Par(3) = 0
+Par(5) = 0
+
+f : A -> B
+│   │    │
+│   │    └─── Verdiområdet
+│   └──────── Definisjonsområdet
+└──────────── Funksjonen
+
+{f(x) | x ∈ X) where X subsetof A
+ │ │    │           │
+ │ │    │           └─── Vilkårlig delmengde av A
+ │ └────┴─────────────── Input til f(x)
+ └────────────────────── Resultat av funksjon 'f' gitt input x
+
+f[X] <- Bilde (image) av X under f, dette er da altså alle verdiene funksjonen gir under en mengde input.
+f[A] <- Bildemengden (range) til f, altså alle verdiene f kan gi (B)
+
+Injektiv: hvis f(x)=f(y), da er x=y. Det vil si at ingen to (eller flere) verdier i A kan gi samme verdi i B.
+Surjektiv: for alle y ∈ B finnes en x ∈ A slik at f(x)=y. Altså at alle element i B er oppnåelig fra A.
+Bijektiv: Injektiv + Surjektiv
+
+Sammensetning av funksjoner:
+Definer f : A -> B og g : B -> C.
+Da er g ∘ f : A -> C en funksjon som først kaller f(x) også g(y) der y=f(x)
+(g ∘ f)(a) = g(f(a))
+
+Operasjoner:
+En n-ær (n-ary) operasjon på en mengde A er en funksjon fra A^N til A.
+En unær (unary) operasjon på en mengde A er en funksjon fra A til A.
