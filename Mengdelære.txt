@@ -1,0 +1,25 @@
+Potensmengde (power set):
+Hvis M er en mengde, er potensmengden til M mengden av alle delmengder av M.
+Vi skriver P(S) for potensmengden til M.
+
+P(Ø)            = { Ø }
+P({ 1 })        = { Ø, {1} }
+P({ 1, 2 })     = { Ø, {1}, {2}, {1, 2} }
+P({ 1, 2, 3 })  = { Ø, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}
+
+Kardinalitet (cardinality):
+To mengder M og N har lik kardinalitet (same cardinality) hvis det finnes en en-til-en korrespondanse mellom elementene i M og N.
+Vi skriver |M| = |N| når det er tilfellet. Mengden M har kardinalitet mindre enn eller lik N hvis det finnes en en-til-en
+korrespondanse mellom M og en delmengde av N. Vi skriver |M| <= |N| når det er tilfellet.
+Hvis M er en endelig mengde, er kardinaliteten til M lik antall elementer i M, og i så fall bruker vi notasjonen |M| for antall
+elementer i M.
+
+Kardinalitet av endelig mengde:
+|{a, b, c}| = 3
+
+Kardinalitet av uendelig mengde:
+N er mengden av alle naturlige tall {0, 1, 2, 3, 4, 5, ...}.
+2N står for mengden av alle naturlige partall {0, 2, 4, 6, 8, 10, ...}
+Funksjonen f(x) = 2x fra N til 2N gir en en-til-en korrespondanse mellom N og 2N,
+som betyr at N og 2N har samme kardinalitet. Vi skriver |N| = |2N|.
+

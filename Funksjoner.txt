@@ -7,7 +7,7 @@ Vi skriver f : A → B for funksjonen f når den er en funksjon fra A til B.
 Relasjonen {<1,1>,<2,2>,<3,3>} er en funksjon fra {1,2,3} til {1,2,3}. Det vil si at f(1) = 1, f(2) = 2, f(3) = 3.
 
 Relasjonen {<1,b>,<2,a>} fra {1,2,3} til {a,b} er ikke en funksjon fordi den mangler et tuppel på formen <3,x>, altså, f(3) finnes ikke
-siden {a,b} bare har to elementer.
+siden det ikke finnes et tuppel i relasjonen som kobler 3 til en verdi i verdiområdet.
 
 Relasjonen {<1,1>,<1,2>} på {1,2} er heller ikke en funksjon fordi 1 forekommer i første elementet i begge tuplene, og det går ikke.
 Hvorfor går ikke det? Fordi i <x,y> gir f(x)=y, og som sagt ovenfor vil en funksjon alltid returnere det samme med samme input. Altså,
